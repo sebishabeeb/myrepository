@@ -1,0 +1,1 @@
+create table tbl_category(pk_int_category_id int primary key auto_increment,category_name varchar(20));

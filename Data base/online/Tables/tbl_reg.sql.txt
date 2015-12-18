@@ -1,0 +1,1 @@
+create table tbl_reg(pk_int_reg_id int primary key auto_increment,first_name varchar(20),last_name varchar(20),address varchar(60),dob varchar(10),gender varchar(10),phone varchar(15),country varchar(20),date_of_reg varchar(20),fk_int_login_id int);

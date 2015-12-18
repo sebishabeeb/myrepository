@@ -1,0 +1,1 @@
+create table tbl_login(pk_int_login_id int primary key auto_increment,user_name varchar(50),password varchar(20),fk_int_userrole_id int);

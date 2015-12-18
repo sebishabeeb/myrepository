@@ -1,0 +1,24 @@
+delimiter //
+create procedure csp_insert2(username varchar(50),password varchar(20),fname varchar(10),lname varchar(10),address varchar(50),dob varchar(10),gender varchar(10),mob varchar(15),country varchar(20))
+begin
+declare a int default 0;
+declare b int default 0;
+start transaction;
+
+
+
+insert into tbl_login(user_name,password,fk_int_userrole_id)values(username,password,2);
+
+set a= last_insert_id();
+
+insert into tbl_reg(first_name,last_name,address,dob,gender,phone,country,date_of_reg,fk_int_login_id)values(fname,lname,address,dob,gender,mob,country,curdate(),a);
+
+set b= last_insert_id();
+
+if (a>0&&b>0) then
+commit;
+else 
+rollback;
+end if;
+end//
+

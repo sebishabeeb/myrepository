@@ -1,0 +1,1 @@
+create table tbl_product(pk_int_productid int primary key auto_increment,product_name varchar(20),descreption varchar(50),brand_name varchar(20),color varchar(20),price varchar(20),fk_int_category_id int,fk_int_subcategory_id int);
