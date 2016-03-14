@@ -1,0 +1,9 @@
+delimiter //
+
+create procedure csp_addsubcat(subcatname varchar(50),subdes varchar(50),fk int)
+begin
+
+insert into tbl_subcategory(subcat_name,subcatedes,fk_int_category_id)values(subcatname,subdes,fk);
+
+
+end//

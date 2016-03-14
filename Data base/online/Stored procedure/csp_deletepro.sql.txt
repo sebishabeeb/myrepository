@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_deletepro(id int)
+begin
+delete from tbl_product where pk_int_productid=id;
+end//

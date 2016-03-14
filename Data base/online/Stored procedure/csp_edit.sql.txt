@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_edit(id int,name varchar(20))
+begin
+update tbl_category set category_name=name where pk_int_category_id=id;
+end//

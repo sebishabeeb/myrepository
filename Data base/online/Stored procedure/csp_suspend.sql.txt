@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_suspend(id int)
+begin
+update tbl_reg set vchr_status=0 where pk_int_reg_id=id;
+end//

@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_editsub(id int,name varchar(20),dscr varchar(500))
+begin
+update tbl_subcategory set subcat_name=name,subcatedes=dscrsd where pk_int_subcategory_id=id;
+end//

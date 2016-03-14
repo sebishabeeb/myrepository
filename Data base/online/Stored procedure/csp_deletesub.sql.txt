@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_deletesub(catid int)
+begin
+delete from tbl_subcategory where pk_int_subcategory_id=catid;
+end//

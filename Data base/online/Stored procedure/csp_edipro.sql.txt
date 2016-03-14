@@ -1,0 +1,5 @@
+delimiter //
+create procedure csp_editpro(id int,name varchar(20),descr varchar(500),clr varchar(20),sprc varchar(20),bprc varchar(20),imag varchar(50),stck int)
+begin
+update tbl_product set product_name=name,descreption=descr,colour=clr,selling_price=sprc,buying_price=bprc,product_image=imag,stock=stck where pk_int_productid=id;
+end//

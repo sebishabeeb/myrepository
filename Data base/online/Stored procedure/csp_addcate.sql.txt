@@ -1,0 +1,18 @@
+delimiter //
+
+create procedure csp_addcategory(catname varchar(50),descri varchar(100))
+begin
+declare a int default 0;
+start transaction;
+insert into tbl_category(category_name,description)values(catname,descri);
+
+set a= last_insert_id();
+
+
+
+if (a>0) then
+commit;
+else 
+rollback;
+end if;
+end//

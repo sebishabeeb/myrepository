@@ -1,0 +1,22 @@
+delimiter //
+create procedure csp_product(pname varchar(30),pdes varchar(1000),color varchar(20),sprice varchar(20),bprice varchar(20),pimg varchar(100),fk_subcat_id int,stock int )
+	begin
+	declare a int default 0;
+    declare b int default 0;
+    start transaction;
+
+	insert into tbl_product(product_name,vchr_description,colour,selling_price,buying_price,product_image,fk_int_subcategory_id)values(pname,pdes,color,sprice,bprice,pimg,fk_subcat_id);
+	set a= last_insert_id();
+
+	insert into tbl_stock(fk_int_product_id,stock)values(a,stock);
+
+	set b= last_insert_id();
+
+
+    if (a>0&&b>0) then
+    commit;
+    else 
+    rollback;
+    end if;
+
+    end//
